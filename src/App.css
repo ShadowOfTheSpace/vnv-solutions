@@ -129,6 +129,7 @@ table {
   border-spacing: 0;
 }
 
+
 /* CSS reset end */
 
 /* Root variables start */
@@ -156,14 +157,15 @@ html {
   font-size: 18px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   column-gap: 80px;
   box-sizing: border-box;
   padding: 0 50px;
 }
 
-.header>*:nth-child(2) {
-  margin-left: auto;
+.header-right {
+  display: flex;
+  column-gap: 80px;
 }
 
 .navigation-list {
