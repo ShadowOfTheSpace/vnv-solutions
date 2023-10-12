@@ -7,11 +7,11 @@ type ResizeblePanelProps = {
   children: React.ReactNode
 }
 
-export const ResizeblePanel = ({ custom, children }: ResizeblePanelProps) => {
+export const ResizablePanel = ({ custom, children }: ResizeblePanelProps) => {
   const [ref, { height }] = useMeasure()
 
   return (
-    <motion.div animate={{ height}}  >
+    <motion.div animate={{ height }} style={{ width: '100%' }}>
       <AnimatePresence initial={false} custom={custom}>
         <motion.div ref={ref} >
           {children}

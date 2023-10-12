@@ -1,7 +1,7 @@
 import { useState } from "react"
-import { ReactComponent as DownArrow } from "../images/svg/down-arrow.svg"
+import { ReactComponent as DownArrow } from "../assets/images/svg/down-arrow.svg"
 import { AnimatedListContainer } from "./AnimatedListContainer"
-import { ResizeblePanel } from "./ResizeblePanel"
+import { ResizablePanel } from "./ResizablePanel"
 
 type QuestionAnswerItemProps = {
   question: string
@@ -18,13 +18,11 @@ export const QuestionAnswerItem = ({ question, answer, index }: QuestionAnswerIt
           <h3>{question}</h3>
           <DownArrow className={`question-answer-item-arrow ${isOpen ? "open" : ""}`} />
         </div>
-        {
-          <ResizeblePanel>
+        {<ResizablePanel>
             {isOpen && <p className="question-answer-item-text">
               {answer}
             </p>}
-          </ResizeblePanel>
-        }
+          </ResizablePanel>}
       </div>
     </AnimatedListContainer>
   )

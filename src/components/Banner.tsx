@@ -20,7 +20,9 @@ export const Banner = () => {
             viewport={{ once: true }}
             transition={{ delay: 1.2, type: 'spring', duration: 1 }}
           >
-            <Button arrow >Замовити</Button>
+            <a href="#contacts">
+              <Button arrow >Замовити</Button>
+            </a>
           </motion.div>
         </div>
       </div>

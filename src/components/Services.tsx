@@ -1,109 +1,135 @@
 import { motion } from "framer-motion"
 import { useState } from "react"
 import { useTrend } from "../hooks/useTrend"
-import { ReactComponent as TelegramIcon } from "../images/svg/telegram-icon.svg"
+
+import { ReactComponent as HeartsIcon } from "../assets/images/svg/hearts-icon.svg"
+import { ReactComponent as FlashIcon } from "../assets/images/svg/flash-icon.svg"
+import { ReactComponent as DialogIcon } from "../assets/images/svg/dialog-icon.svg"
+import { ReactComponent as CupIcon } from "../assets/images/svg/cup-icon.svg"
+import { ReactComponent as CogwheelIcon } from "../assets/images/svg/cogwheel-icon.svg"
+import { ReactComponent as ChecklistIcon } from "../assets/images/svg/checklist-icon.svg"
+import { ReactComponent as RocketIcon } from "../assets/images/svg/rocket-icon.svg"
+import { ReactComponent as DumbbellsIcon } from "../assets/images/svg/dumbbells-icon.svg"
+import { ReactComponent as StarsIcon } from '../assets/images/svg/stars-icon.svg'
+import { ReactComponent as FlameIcon } from '../assets/images/svg/flame-icon.svg'
+import { ReactComponent as MedalIcon } from '../assets/images/svg/medal-icon.svg'
+
+import { ReactComponent as CodeImage } from '../assets/images/svg/code-image.svg'
+import { ReactComponent as ClipboardImage } from '../assets/images/svg/clipboard-image.svg'
+import { ReactComponent as CartImage } from '../assets/images/svg/cart-image.svg'
+import { ReactComponent as GhostImage } from '../assets/images/svg/ghost-image.svg'
+import { ReactComponent as CopyImage } from '../assets/images/svg/copy-image.svg'
+import { ReactComponent as CogwheelImage } from '../assets/images/svg/cogwheel-image.svg'
+
+
 import { AnimatedCarousel } from "./AnimatedCarousel"
 import { AnimatedListContainer } from "./AnimatedListContainer"
 import { AnimatedSectionTitle } from "./AnimatedSectionTitle"
 import { Button } from "./Button"
-import { ResizeblePanel } from "./ResizeblePanel"
+import { ResizablePanel } from "./ResizablePanel"
 
 const services = [
   {
     title: "Розробка ПЗ",
     benefits: [{
       title: "Швидко",
-      icon: <TelegramIcon />
+      icon: <FlashIcon />
     },
     {
       title: "Якісно",
-      icon: <TelegramIcon />
+      icon: <MedalIcon />
     },
     {
       title: "Перспективно",
-      icon: <TelegramIcon />
+      icon: <RocketIcon />
     }],
-    description: "0Velit reprehenderit nisi voluptate ut quis eiusmod magna nulla eiusmod dolore. Quis ullamco est fugiat incididunt incididunt. Enim officia excepteur consequat proident. Sit ipsum anim ad ut velit est esse irure Lorem proident laborum culpa irure. Exercitation do magna pariatur consectetur id amet consectetur qui veniam. Incididunt magna elit labore aliquip ipsum ea irure est et reprehenderit deserunt voluptate. Reprehenderit dolor dolore exercitation irure enim fugiat consequat incididunt excepteur excepteur et."
+    icon: <CodeImage />,
+    description: "Наше програмне забезпечення спрямоване на вирішення ваших бізнес-проблем і задоволення конкретних бізнес-потреб. Наша досвідчена команда може розробити програмне забезпечення для широкого кола галузей промисловості та застосувань, зокрема сільського господарства, фінансів, охорони здоров’я та логістики тощо. Наша мета — надати високоякісне програмне забезпечення, яке вирішить ваші бізнес-завдання та проблеми, а також оптимізує робочі процеси, щоб допомогти вашому бізнесу розвиватися."
   },
   {
     title: "Створення ERP системи",
     benefits: [{
-      title: "Швидко",
-      icon: <TelegramIcon />
+      title: "Важливий кожен",
+      icon: <HeartsIcon />
     },
     {
-      title: "Якісно",
-      icon: <TelegramIcon />
+      title: "Лідерство в галузі",
+      icon: <CupIcon />
     },
     {
-      title: "Перспективно",
-      icon: <TelegramIcon />
+      title: "Гнучкість",
+      icon: <DumbbellsIcon />
     }],
-    description: "Nostrud cillum deserunt ullamco fugiat dolor excepteur aliquip ex elit. Mollit voluptate cupidatat irure aute. Reprehenderit pariatur magna reprehenderit sunt pariatur consequat aute Lorem. Dolore eu ullamco id eiusmod esse sint consectetur ea."
+    icon: <ClipboardImage />,
+    description: "Розробка індивідуальних систем ERP (Enterprise Resource Planning) - системи, які оптимізують ваші бізнес-операції, покращують зв’язок між відділами та автоматизують процеси. Наші ERP-рішення адаптовані до унікальних потреб вашого бізнесу та можуть бути інтегровані з іншими програмними рішеннями для створення комплексної системи управління бізнесом."
   },
   {
     title: "Створення інтернет-магазину",
     benefits: [{
-      title: "Швидко",
-      icon: <TelegramIcon />
+      title: "Комунікація",
+      icon: <DialogIcon />
     },
     {
-      title: "Якісно",
-      icon: <TelegramIcon />
+      title: "Ефективність",
+      icon: <FlameIcon />
     },
     {
-      title: "Перспективно",
-      icon: <TelegramIcon />
+      title: "Якість",
+      icon: <MedalIcon />
     }],
-    description: "Qui non excepteur Lorem dolore esse tempor do laboris veniam enim commodo in exercitation. Excepteur irure officia est sunt occaecat in incididunt nulla anim nisi cillum laboris. Pariatur fugiat eiusmod aute do ullamco deserunt culpa Lorem tempor velit elit deserunt mollit irure."
+    icon: <CartImage />,
+    description: "Ми пропонуємо послуги з розробки інтернет-магазину для клієнтів, які хочуть створити онлайн-версію свого бізнесу. Наша команда може розробити та налаштувати веб-сайт для електронної комерції, який буде простим у використанні та забезпечить безперебійну взаємодію з користувачем. Наша мета — допомогти вам збільшити онлайн-продажі, розширити клієнтську базу та покращити загальну ефективність бізнесу. Глибоке розуміння та великий досвід дозволяє нам створювати найбільш конверсійні інтернет-магазини для вас."
   },
   {
     title: "Розробка ботів",
     benefits: [{
-      title: "Швидко",
-      icon: <TelegramIcon />
+      title: "Автоматизація",
+      icon: <CogwheelIcon />
     },
     {
-      title: "Якісно",
-      icon: <TelegramIcon />
+      title: "Інновації",
+      icon: <StarsIcon />
     },
     {
-      title: "Перспективно",
-      icon: <TelegramIcon />
+      title: "Якість",
+      icon: <MedalIcon />
     }],
-    description: "Id occaecat reprehenderit ipsum aliqua fugiat cupidatat ex fugiat magna incididunt. Reprehenderit sit consectetur enim culpa enim veniam laborum exercitation ipsum eiusmod laboris anim. Do irure ea adipisicing ipsum cillum. Fugiat ea cillum proident in sunt consectetur ad esse incididunt labore. Ea dolore officia dolor sint commodo officia sint est reprehenderit magna. Duis enim sunt ex et deserunt tempor qui quis occaecat laborum. Eiusmod in enim nulla sit excepteur."
+    icon: <GhostImage />,
+    description: "Ми спеціалізуємося на розробці індивідуальних ботів, які можуть автоматизувати завдання та підвищити ефективність. Ми можемо створювати ботів для широкого спектру програм, включаючи обслуговування клієнтів, соціальні мережі та продажі тощо. Наша мета — надати вам передову технологію, яка покращує продуктивність і покращує взаємодію з клієнтами."
   },
   {
     title: "Перенесення сайтів",
     benefits: [{
-      title: "Швидко",
-      icon: <TelegramIcon />
+      title: "Вміння",
+      icon: <StarsIcon />
     },
     {
-      title: "Якісно",
-      icon: <TelegramIcon />
+      title: "Результативність",
+      icon: <FlameIcon />
     },
     {
-      title: "Перспективно",
-      icon: <TelegramIcon />
+      title: "В ногу з часом",
+      icon: <RocketIcon />
     }],
-    description: "Incididunt anim deserunt elit voluptate deserunt voluptate dolore enim irure non laborum. Dolore ut adipisicing culpa occaecat. Cupidatat occaecat consequat nulla do eiusmod non in duis proident quis."
+    icon: <CopyImage />,
+    description: "Ми пропонуємо послуги перенесення веб-сайту для клієнтів, які хочуть перенести свій веб-сайт з однієї платформи на іншу. Наша команда розробників гарантує, що перехід буде плавним і безперебійним, а веб-сайт залишатиметься повністю функціональним протягом усього процесу. Наша мета полягає в тому, щоб звести до мінімуму будь-які збої в онлайн бізнесі наших клієнтів і гарантувати що їхній веб-сайт продовжить відповідати їхнім потребам."
   },
   {
     title: "Підтримка та оновлення",
     benefits: [{
-      title: "Швидко",
-      icon: <TelegramIcon />
+      title: "Постійні покращення",
+      icon: <CogwheelIcon />
     },
     {
-      title: "Якісно",
-      icon: <TelegramIcon />
+      title: "Контроль",
+      icon: <ChecklistIcon />
     },
     {
-      title: "Перспективно",
-      icon: <TelegramIcon />
+      title: "Спілкування",
+      icon: <DialogIcon />
     }],
-    description: "Sunt labore quis enim exercitation culpa velit et adipisicing fugiat. Ullamco labore aliqua sit fugiat laboris occaecat eiusmod officia culpa ut. Ut incididunt Lorem officia ea ex est irure minim. In consequat fugiat officia do qui quis sunt excepteur cupidatat fugiat cupidatat dolor. Nisi esse laboris eu eu adipisicing minim amet fugiat aliqua sit."
+    icon: <CogwheelImage />,
+    description: "Ми спеціалізуємося на розробці індивідуальних ботів, які можуть автоматизувати завдання та підвищити ефективність. Ми можемо створювати ботів для широкого спектру програм, включаючи обслуговування клієнтів, соціальні мережі та продажі тощо. Наша мета — надати вам передову технологію, яка покращує продуктивність і покращує взаємодію з клієнтами."
   },
 
 ]
@@ -135,7 +161,7 @@ export const Services = () => {
           transition={{ delay: 0.3 }}
           viewport={{ once: true }}
         >
-          <ResizeblePanel>
+          <ResizablePanel>
             <AnimatedCarousel index={currentService} direction='y' trend={trend}>
               <div className="service-window-content">
                 <div className="service-left">
@@ -150,11 +176,12 @@ export const Services = () => {
                   <p className="service-description">{services[currentService].description}</p>
                 </div>
                 <div className="service-right">
-                  <Button>Хочу!</Button>
+                  {services[currentService].icon}
+                  <a href="#contacts"><Button>Хочу!</Button></a>
                 </div>
               </div>
             </AnimatedCarousel>
-          </ResizeblePanel>
+          </ResizablePanel>
         </motion.div>
       </div>
     </section>

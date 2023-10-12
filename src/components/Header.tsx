@@ -8,7 +8,7 @@ export const Header = () => {
   return (
     <header className='header'>
       <div className='header-logo'>
-        <img src={require('../images/vnv-logo.png')} alt='vnv-logo' />
+        <img src={require('../assets/images/vnv-logo.png')} alt='vnv-logo' />
       </div>
       <div className='header-right'>
         <Navigation />

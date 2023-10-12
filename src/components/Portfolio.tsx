@@ -3,122 +3,107 @@ import { AnimatedImageCarousel } from './AnimatedImageCarousel'
 import { AnimatedSwiper } from './AnimatedSwiper'
 import { AnimatedSectionTitle } from './AnimatedSectionTitle'
 import { motion } from 'framer-motion'
-// import portfolio1 from '../images/portfolio1.png'
-// import portfolio2 from '../images/portfolio2.png'
-// import portfolio3 from '../images/portfolio3.png'
 
 const projects = [
-
-  // {
-  //   preview: portfolio1,
-  //   images: [
-  //     portfolio1,
-  //     portfolio2,
-  //     portfolio3
-  //   ]
-  // },
-  // {
-  //   preview: portfolio2,
-  //   images: [
-  //     portfolio1,
-  //     portfolio2,
-  //     portfolio3
-  //   ]
-  // },
-  // {
-  //   preview: portfolio3,
-  //   images: [
-  //     portfolio1,
-  //     portfolio2,
-  //     portfolio3,
-  //   ]
-  // },
-  // {
-  //   preview: portfolio1,
-  //   images: [
-  //     portfolio1,
-  //     portfolio2,
-  //     portfolio3
-  //   ]
-  // },
-  // {
-  //   preview: portfolio2,
-  //   images: [
-  //     portfolio1,
-  //     portfolio2,
-  //     portfolio3
-  //   ]
-  // },
-  // {
-  //   preview: portfolio3,
-  //   images: [
-  //     portfolio1,
-  //     portfolio2,
-  //     portfolio3,
-  //   ]
-  // },
   {
-    preview: 'https://www.v-n-v.tech/img/learnitlive.png',
-    images: [
-      'https://www.v-n-v.tech/img/learnitlive.png',
-      'https://www.v-n-v.tech/img/volstiny_production.png',
-      'https://www.v-n-v.tech/img/iren.png'
+    preview: require('../assets/images/portfolio-iren-banquet-hall-1.jpg'),
+    content: [
+      {
+        src: require('../assets/images/portfolio-iren-banquet-hall-1.jpg'),
+        type: 'image'
+      },
+      {
+        src: require('../assets/images/portfolio-iren-banquet-hall-2.jpg'),
+        type: 'image'
+      },
+      {
+        src: require('../assets/images/portfolio-iren-banquet-hall-3.jpg'),
+        type: 'image'
+      }
     ]
   },
   {
-    preview: 'https://www.v-n-v.tech/img/iren.png',
-    images: [
-      'https://www.v-n-v.tech/img/iren.png',
-      'https://www.v-n-v.tech/img/volstiny_production.png',
-      'https://www.v-n-v.tech/img/learnitlive.png',
+    preview: require('../assets/images/portfolio-learn-it-live-1.jpg'),
+    content: [
+      {
+        src: require('../assets/images/portfolio-learn-it-live-1.jpg'),
+        type: 'image'
+      },
+      {
+        src: require('../assets/images/portfolio-learn-it-live-2.jpg'),
+        type: 'image'
+      }
     ]
   },
   {
-    preview: 'https://www.v-n-v.tech/img/learnitlive.png',
-    images: [
-      'https://www.v-n-v.tech/img/learnitlive.png',
-      'https://www.v-n-v.tech/img/volstiny_production.png',
-      'https://www.v-n-v.tech/img/iren.png'
+    preview: require('../assets/images/video-preview-1.jpg'),
+    content: [
+      {
+        src: require('../assets/videos/video.mp4'),
+        type: 'video'
+      },
+      {
+        src: require('../assets/images/video-preview-1.jpg'),
+        type: 'image'
+      },
+      {
+        src: require('../assets/images/video-preview-2.jpg'),
+        type: 'image'
+      }
     ]
   },
   {
-    preview: 'https://www.v-n-v.tech/img/volstiny_production.png',
-    images: [
-      'https://www.v-n-v.tech/img/volstiny_production.png',
-      'https://www.v-n-v.tech/img/iren.png',
-      'https://www.v-n-v.tech/img/learnitlive.png',
+    preview: require('../assets/images/portfolio-iren-banquet-hall-1.jpg'),
+    content: [
+      {
+        src: require('../assets/images/portfolio-iren-banquet-hall-1.jpg'),
+        type: 'image'
+      },
+      {
+        src: require('../assets/images/portfolio-iren-banquet-hall-2.jpg'),
+        type: 'image'
+      },
+      {
+        src: require('../assets/images/portfolio-iren-banquet-hall-3.jpg'),
+        type: 'image'
+      }
     ]
   },
   {
-    preview: 'https://www.v-n-v.tech/img/iren.png',
-    images: [
-      'https://www.v-n-v.tech/img/iren.png',
-      'https://www.v-n-v.tech/img/volstiny_production.png',
-      'https://www.v-n-v.tech/img/learnitlive.png',
+    preview: require('../assets/images/portfolio-learn-it-live-1.jpg'),
+    content: [
+      {
+        src: require('../assets/images/portfolio-learn-it-live-1.jpg'),
+        type: 'image'
+      },
+      {
+        src: require('../assets/images/portfolio-learn-it-live-2.jpg'),
+        type: 'image'
+      }
     ]
   },
   {
-    preview: 'https://www.v-n-v.tech/img/learnitlive.png',
-    images: [
-      'https://www.v-n-v.tech/img/learnitlive.png',
-      'https://www.v-n-v.tech/img/volstiny_production.png',
-      'https://www.v-n-v.tech/img/iren.png'
+    preview: require('../assets/images/video-preview-1.jpg'),
+    content: [
+      {
+        src: require('../assets/videos/video.mp4'),
+        type: 'video'
+      },
+      {
+        src: require('../assets/images/video-preview-1.jpg'),
+        type: 'image'
+      },
+      {
+        src: require('../assets/images/video-preview-2.jpg'),
+        type: 'image'
+      }
     ]
   },
-  {
-    preview: 'https://www.v-n-v.tech/img/volstiny_production.png',
-    images: [
-      'https://www.v-n-v.tech/img/volstiny_production.png',
-      'https://www.v-n-v.tech/img/iren.png',
-      'https://www.v-n-v.tech/img/learnitlive.png',
-    ]
-  },
-
 ]
 
 export const Portfolio = () => {
   const [currentProject, setCurrentProject] = useState(0)
-  const [currentImage, setCurrentImage] = useState(0)
+  const [currentContent, setCurrentContent] = useState(0)
 
   return (
     <section className='portfolio' id='portfolio'>
@@ -131,25 +116,24 @@ export const Portfolio = () => {
           transition={{ duration: 0.5, type: 'spring' }}
           viewport={{ once: true, margin: '-15%' }}
         >
-          <div className="image-container">
+          <div className="content-container">
             <AnimatedSwiper
-              imageAnimationKey={currentProject}
-              imageIndex={currentImage}
-              setNextImageIndex={setCurrentImage}
-              imagesListLength={projects[currentProject].images.length}
-              currentImageSrc={projects[currentProject].images[currentImage]}
+              contentType={projects[currentProject].content[currentContent].type}
+              contentAnimationKey={currentProject}
+              contentIndex={currentContent}
+              setNextContentIndex={setCurrentContent}
+              contentListLength={projects[currentProject].content.length}
+              currentContentSrc={projects[currentProject].content[currentContent].src}
             />
           </div>
         </motion.div>
-        <motion.div
-          className="project-selector"
-        >
+        <motion.div className="project-selector">
           <AnimatedImageCarousel
             type={'vertical'}
             itemClass={'project-selector-item'}
             containerClass={'project-selector-container'}
             imageSrcList={projects.map(project => project.preview)}
-            onImageClick={() => setCurrentImage(0)}
+            onImageClick={() => setCurrentContent(0)}
             setSelectedImage={setCurrentProject}
           />
         </motion.div>

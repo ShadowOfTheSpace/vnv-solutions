@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion'
 import React, { useEffect, useRef, useState } from 'react'
 import useMeasure from 'react-use-measure'
-import { ReactComponent as DownArrow } from "../images/svg/down-arrow.svg"
-import { ReactComponent as UpperArrow } from "../images/svg/upper-arrow.svg"
-import { ReactComponent as LeftArrow } from "../images/svg/left-arrow.svg"
-import { ReactComponent as RightArrow } from "../images/svg/right-arrow.svg"
+import { ReactComponent as DownArrow } from "../assets/images/svg/down-arrow.svg"
+import { ReactComponent as LeftArrow } from "../assets/images/svg/left-arrow.svg"
+import { ReactComponent as RightArrow } from "../assets/images/svg/right-arrow.svg"
+import { ReactComponent as UpperArrow } from "../assets/images/svg/upper-arrow.svg"
 
 type AnimatedImageCarouselProps = {
   type: 'vertical' | 'horizontal',
@@ -17,20 +17,12 @@ type AnimatedImageCarouselProps = {
 
 const variants = {
   initial: {
-    // scale: 0.5,
     opacity: 0
   },
 
   whileInView: ({ index }: { index: number, type: 'vertical' | 'horizontal' }) => ({
-    // x: 0,
-    // scale: 1,
     opacity: 1,
     transition: { delay: index > 3 ? 0 : index * 0.05, duration: 0.5, type: 'spring' },
-    // transition: {
-    //   opacity: { type: "spring", stiffness: 100 },
-    //   duration: 0.8,
-    //   delay: 0.2,
-    // }
   }),
 }
 
@@ -48,7 +40,7 @@ export const AnimatedImageCarousel = ({
   const [maxScrollHeight, setMaxScrollHeight] = useState(0)
   const [ref, bounds] = useMeasure()
   const scrollIncrement = type === 'vertical' ? bounds.height : bounds.width
-  
+
   useEffect(() => {
     if (selectorRef.current) {
       setMaxScrollHeight(
@@ -104,24 +96,25 @@ export const AnimatedImageCarousel = ({
 
       <div className={containerClass} ref={selectorRef} onScroll={onSelectionScroll}>
         {imageSrcList.map((image, index) =>
-          <motion.img
-            viewport={{ once: true, }}
-            variants={variants}
-            initial="initial"
-            whileInView="whileInView"
-            whileHover={{ opacity: 0.6 }}
-            whileTap={{ scale: 0.9 }}
-            custom={{ type, index }}
-            ref={ref}
-            key={index}
-            className={itemClass}
-            src={image}
-            alt='img'
-            onClick={() => {
-              setSelectedImage(index)
-              onImageClick()
-            }}
-          />
+          <div key={index}>
+            <motion.img
+              viewport={{ once: true, }}
+              variants={variants}
+              initial="initial"
+              whileInView="whileInView"
+              whileHover={{ opacity: 0.6 }}
+              whileTap={{ scale: 0.9 }}
+              custom={{ type, index }}
+              ref={ref}
+              className={itemClass}
+              src={image}
+              alt='img'
+              onClick={() => {
+                setSelectedImage(index)
+                onImageClick()
+              }}
+            />
+          </div>
         )}
       </div>
     </>
