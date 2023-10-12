@@ -5,7 +5,7 @@ export const Header = () => {
 
   return (
     <header className='header'>
-      <a href="/">
+      <a href="/vnv-solutions">
         <div className='header-logo'>
           <img src={require('../assets/images/vnv-logo.png')} alt='vnv-logo' />
         </div>
