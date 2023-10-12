@@ -5,9 +5,11 @@ export const Header = () => {
 
   return (
     <header className='header'>
-      <div className='header-logo'>
-        <img src={require('../assets/images/vnv-logo.png')} alt='vnv-logo' />
-      </div>
+      <a href="/">
+        <div className='header-logo'>
+          <img src={require('../assets/images/vnv-logo.png')} alt='vnv-logo' />
+        </div>
+      </a>
       <div className='header-right'>
         <Navigation />
         <LanguageSwitcher languageList={["ua", "en"]} />
