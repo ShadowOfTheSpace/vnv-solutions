@@ -152,6 +152,10 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
+*::selection {
+  background: #5f5974;
+}
+
 /* CSS reset end */
 
 /* Root variables start */
@@ -162,6 +166,7 @@ input::-webkit-inner-spin-button {
   --main-item-color: #211f28;
   --icon-color: #E7D4D4;
   --second-bg-color: linear-gradient(to right, #211f28, #1a171c);
+  --bounce-amount: 60px
 }
 
 /* Root variables end */
@@ -169,6 +174,7 @@ input::-webkit-inner-spin-button {
 /* Scroll styling start */
 *::-webkit-scrollbar {
   width: 7px;
+  height: 5px;
 }
 
 ::-webkit-scrollbar,
@@ -237,10 +243,9 @@ p {
   font-weight: 400;
 }
 
-section {
+/* section {
   width: 1200px;
-}
-
+} */
 
 
 input,
@@ -281,6 +286,46 @@ textarea:focus {
   justify-content: center;
   align-items: center;
   row-gap: 150px;
+  overflow: hidden;
+  padding-bottom: 100px;
+}
+
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 40px;
+  }
+
+  .App {
+    row-gap: 120px;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  h1 {
+    font-size: 35px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  h4 {
+    font-size: 16px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .App {
+    row-gap: 100px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .App {
+    row-gap: 80px;
+  }
 }
 
 /* HTML styling end */
@@ -314,6 +359,7 @@ textarea:focus {
 .navigation-element {
   text-transform: uppercase;
   transition: color 0.3s;
+  font-weight: 500;
 }
 
 .navigation-element:hover {
@@ -328,12 +374,58 @@ textarea:focus {
   column-gap: 15px;
 }
 
+.selected-language{
+  font-weight: 600;
+}
+
 .language-splitter {
   height: 1.3em;
   width: 2px;
   border-radius: 20px;
   background-color: var(--main-font-color);
 }
+
+@media only screen and (max-width: 1024px) {
+
+  .header-right,
+  .navigation-list {
+    column-gap: 40px;
+  }
+
+  .header-logo img {
+    height: 100px;
+    width: auto;
+  }
+
+  .header {
+    font-size: 16px;
+    height: 120px;
+    column-gap: 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .header-logo img {
+    height: 80px;
+    width: auto;
+  }
+
+  .header {
+    font-size: 14px;
+    height: 100px;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .navigation {
+    display: none;
+  }
+
+  .header {
+    padding: 0 15px;
+  }
+}
+
 
 /* Header end */
 
@@ -368,8 +460,60 @@ textarea:focus {
   align-items: flex-end;
   justify-content: space-between;
   position: relative;
-  /* backdrop-filter: blur(100px); */
+}
 
+@media only screen and (max-width: 1024px) {
+
+  .banner {
+    height: calc(100vh - 120px);
+  }
+
+  .banner-content {
+    flex-direction: column;
+    row-gap: 50px;
+  }
+
+  .banner-content h1 {
+    margin-right: auto;
+  }
+
+  .banner-content .button {
+    margin-left: auto;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .banner {
+    height: calc(100vh - 100px);
+    margin-top: -120px;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .banner-content h1 {
+    margin-right: unset;
+  }
+
+  .banner-content {
+    padding: 0;
+    width: 500px;
+    align-items: center;
+    height: 50vh;
+  }
+
+  .banner {
+    margin-top: -100px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  h1 {
+    font-size: 26px;
+  }
+
+  .banner {
+    margin-top: -80px;
+  }
 }
 
 /* Banner end */
@@ -380,7 +524,7 @@ textarea:focus {
   background-color: white;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   column-gap: 25px;
   border: none;
   border-radius: 10px;
@@ -393,6 +537,7 @@ textarea:focus {
 }
 
 .button svg {
+  min-width: 24px;
   transition: 0.3s;
   color: var(--main-bg-color)
 }
@@ -411,6 +556,18 @@ textarea:focus {
 
 .button:active svg {
   transform: translateX(70%);
+}
+
+@media only screen and (max-width: 560px) {
+  .button {
+    width: 50vw;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .button {
+    width: 90vw;
+  }
 }
 
 /* Button end */
@@ -486,6 +643,24 @@ svg {
   width: 75%;
 }
 
+@media only screen and (max-width: 1024px) {
+  .why-us-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .why-us-cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .why-us-card {
+    width: 90vw;
+    padding: 15px;
+    box-sizing: border-box;
+  }
+}
+
 /* Why us end */
 
 /* FAQ start */
@@ -527,7 +702,7 @@ svg {
 .question-answer-item-header {
   display: flex;
   justify-content: space-between;
-
+  column-gap: 20px;
 }
 
 .question-answer-item-text {
@@ -541,6 +716,19 @@ svg {
 
 .question-answer-item-arrow.open {
   transform: rotate(180deg);
+}
+
+@media only screen and (max-width: 1024px) {
+  .question-answer-item {
+    box-sizing: border-box;
+    width: 90vw;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .question-answer-item-header svg {
+    align-self: center;
+  }
 }
 
 /* FAQ end */
@@ -628,7 +816,7 @@ svg {
 }
 
 .service-right .button {
-  width: 100%;
+  /* width: 100%; */
   justify-content: center;
 }
 
@@ -647,6 +835,95 @@ svg {
 .service-description {
   font-weight: 200;
   line-height: normal;
+}
+
+
+@media only screen and (max-width: 1024px) {
+
+  .service-window {
+    width: 90vw;
+  }
+
+  .service-button {
+    padding: 10px 20px;
+  }
+
+  .service-buttons {
+    width: 80vw;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+  :root {
+    --bounce-amount: 30px
+  }
+
+
+  .service-buttons {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+    height: 50px;
+    width: 90vw;
+    justify-content: start;
+  }
+
+  .service-button {
+    /* height: 65px; */
+    width: max-content;
+  }
+
+  .service-right svg {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .service-window-content {
+    flex-direction: column;
+    row-gap: 30px;
+    padding: 20px;
+  }
+
+  .service-left {
+    width: 100%;
+  }
+
+  .service-right {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .service-right svg {
+    display: none;
+  }
+
+  .service-left {
+    row-gap: 30px;
+  }
+
+  .service-benefits {
+    row-gap: 10px;
+  }
+
+}
+
+@media only screen and (max-width: 375px) {
+  .service-window-content {
+    padding: 15px;
+  }
+
+  .service-benefit svg {
+    width: 35px;
+    height: 35px;
+  }
+
+  .service-right .button {
+    width: 80vw;
+  }
+
 }
 
 /* Services end */
@@ -773,7 +1050,7 @@ svg {
   display: flex;
   flex-direction: column;
   align-items: center;
-  row-gap: 20px;
+  gap: 20px;
   position: relative;
   overflow-y: scroll;
   height: 100%;
@@ -802,6 +1079,61 @@ svg {
 
 .project-selector-item:active {
   transform: scale(0.9);
+}
+
+.project-selector.vertical {
+  display: none;
+}
+
+@media only screen and (max-width: 1150px) {
+  .arrow-container {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .content-container img,
+  .content-container video {
+    width: 90vw;
+    height: 60vh;
+  }
+
+  .projects-viewer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
+    width: 90vw;
+  }
+
+  .content-container {
+    height: 60vh;
+  }
+
+  .project-viewer {
+    width: 90vw;
+  }
+
+  .project-selector.vertical {
+    display: none;
+  }
+
+  .project-selector.horizontal {
+    width: 90vw;
+  }
+
+  .project-selector {
+    height: unset;
+  }
+
+  .project-selector-container {
+    flex-direction: row;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .content-container {
+    height: 50vh;
+  }
 }
 
 /* Portfolio end */
@@ -862,6 +1194,43 @@ svg {
 
 }
 
+@media only screen and (max-width: 768px) {
+  .contact-us-form-container {
+    box-sizing: border-box;
+    width: 90vw;
+  }
+
+  .contact-us-form {
+    width: 95%;
+  }
+
+  .contact-us-form input:not(:first-child),
+  .contact-us-form textarea {
+    margin-top: 4px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .contacts-methods-list {
+    column-gap: 10px;
+  }
+
+  .contact-us-form-container {
+    padding: 20px;
+    row-gap: 20px;
+  }
+
+  .contact-us-form {
+    width: 100%;
+  }
+
+  .contact-us-form .button {
+    width: 80vw;
+  }
+
+}
+
+
 /* Contact us end */
 
 /* Social button start */
@@ -896,6 +1265,12 @@ svg {
   height: 30px;
 }
 
+@media only screen and (max-width: 375px) {
+  .social-button {
+    scale: 0.8;
+  }
+}
+
 /* Social button end */
 
 /* Error message start */
@@ -919,7 +1294,7 @@ svg {
   align-items: center;
   flex-direction: column;
   row-gap: 60px;
-  margin-bottom: 100px;
+  /* margin-bottom: 50px; */
 }
 
 .social-networks-list {
@@ -929,6 +1304,18 @@ svg {
 
 .social-networks-list .social-button {
   background-image: var(--second-bg-color)
+}
+
+@media only screen and (max-width: 768px) {
+  .social-networks-list {
+    column-gap: 15px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .social-networks-list {
+    column-gap: 10px;
+  }
 }
 
 /* Social networks end */
@@ -949,7 +1336,8 @@ svg {
   padding: 40px;
   display: flex;
   flex-direction: column-reverse;
-  width: 55%;
+  width: 660px;
+  /* width: 55%; */
   justify-content: center;
   align-items: center;
   row-gap: 60px;
@@ -976,6 +1364,39 @@ svg {
 .brief-description {
   width: 60%;
   line-height: normal;
+}
+
+@media only screen and (max-width: 1024px) {
+  .brief-top svg {
+    width: 125px;
+    height: 125px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .brief-top svg {
+    display: none;
+  }
+
+  .brief-description {
+    width: 100%;
+  }
+
+  .brief-container {
+    width: 90vw;
+    box-sizing: border-box;
+    padding: 20px;
+  }
+
+  .brief-container {
+    row-gap: 30px;
+  }
+}
+
+@media only screen and (max-width:375px) {
+  .brief-container .button {
+    width: 80vw;
+  }
 }
 
 /* Brief end */
@@ -1020,6 +1441,7 @@ svg {
   justify-content: space-between;
   line-height: normal;
   width: 100%;
+  column-gap: 15px;
   /* align-self: flex-end; */
 }
 
@@ -1066,6 +1488,27 @@ svg {
 .success-content h4 {
   text-align: center;
   line-height: normal;
+}
+
+@media only screen and (max-width:768px) {
+  .lead-magnet-container {
+    width: 90vw;
+    box-sizing: border-box;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  .exit-button {
+    scale: 0.8;
+  }
+
+}
+
+@media only screen and (max-width:375px) {
+  .lead-magnet-form .button {
+    width: 80vw;
+  }
 }
 
 /* Lead magnet end */

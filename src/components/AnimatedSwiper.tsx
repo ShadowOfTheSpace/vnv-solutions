@@ -26,7 +26,7 @@ export const AnimatedSwiper = ({
   let trend = useTrend(contentIndex)
 
   const handleDrag = (_: any, info: PanInfo) => {
-    if (Math.abs(info.offset.x) > 150) {
+    if (Math.abs(info.offset.x) > 100) {
       if (contentIndex - 1 >= 0 && info.offset.x > 0) {
         setNextContentIndex(contentIndex - 1)
       }

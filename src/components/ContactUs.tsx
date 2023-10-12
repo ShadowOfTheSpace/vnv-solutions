@@ -12,6 +12,7 @@ import { AnimatedSectionTitle } from './AnimatedSectionTitle'
 import { Button } from './Button'
 import { ErrorMessage } from './ErrorMessage'
 import { SocialButton } from './SocialButton'
+import { useTranslation, TranslationContextType } from '../hooks/useTranslation'
 
 const contactMethods = [
   {
@@ -45,6 +46,8 @@ const contactMethods = [
 ]
 
 export const ContactUs = () => {
+  const { translate } = useTranslation() as TranslationContextType
+
   const [currentContactMethod, setCurrentContactMethod] = useState(0)
 
   useEffect(() => {
@@ -82,7 +85,7 @@ export const ContactUs = () => {
 
   return (
     <section className='contact-us' id='contacts'>
-      <AnimatedSectionTitle>Зв'яжіться з нами</AnimatedSectionTitle>
+      <AnimatedSectionTitle>{translate("Contact us")}</AnimatedSectionTitle>
       <motion.div
         className='contact-us-form-container'
         initial={{ x: 200, opacity: 0 }}
@@ -90,7 +93,7 @@ export const ContactUs = () => {
         transition={{ delay: 0.4 }}
         viewport={{ once: true, }}
       >
-        <h3>Оберіть спосіб зв'язку</h3>
+        <h3>{translate("Select a communication method")}</h3>
         <ul className='contacts-methods-list'>
           {contactMethods.map((contactMethod, index) =>
             <SocialButton
@@ -104,7 +107,7 @@ export const ContactUs = () => {
         <form className='contact-us-form' onSubmit={handleSubmit(submitMessage)}>
           <input
             type='text'
-            placeholder="Ім'я"
+            placeholder={translate("Name")}
             autoComplete='off'
             {...register("name")}
           />
@@ -125,10 +128,10 @@ export const ContactUs = () => {
           />
           <ErrorMessage>{errors.contacts ? errors.contacts.message : ""}</ErrorMessage>
           <textarea
-            placeholder="Додаткова інформація"
+            placeholder={translate("Additional information")}
             {...register("messageText")}
           />
-          <Button arrow type='submit'>Надіслати</Button>
+          <Button arrow type='submit'>{translate("Send")}</Button>
         </form>
       </motion.div>
     </section>

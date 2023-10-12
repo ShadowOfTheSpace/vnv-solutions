@@ -1,4 +1,5 @@
 import { motion } from "framer-motion"
+import { useTranslation, TranslationContextType } from "../hooks/useTranslation"
 
 type WhyUsCardProps = {
   title: string
@@ -22,6 +23,7 @@ const variants = {
 }
 
 export const WhyUsCard = ({ title, icon, description, index }: WhyUsCardProps) => {
+  const { translate } = useTranslation() as TranslationContextType
   return (
     <motion.div
       className="why-us-card"
@@ -32,11 +34,11 @@ export const WhyUsCard = ({ title, icon, description, index }: WhyUsCardProps) =
       custom={index}
     >
       <div className="why-us-card-header">
-        <h3>{title}</h3>
+        <h3>{translate(title)}</h3>
         {icon}
       </div>
       <p className='why-us-card-text'>
-        {description}
+        {translate(description)}
       </p>
     </motion.div>
   )

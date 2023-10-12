@@ -11,7 +11,7 @@ export const ResizablePanel = ({ custom, children }: ResizeblePanelProps) => {
   const [ref, { height }] = useMeasure()
 
   return (
-    <motion.div animate={{ height }} style={{ width: '100%' }}>
+    <motion.div animate={{ height: height ? height : '200' }} style={{ width: '100%' }}>
       <AnimatePresence initial={false} custom={custom}>
         <motion.div ref={ref} >
           {children}

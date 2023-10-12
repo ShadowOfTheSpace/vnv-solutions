@@ -27,109 +27,110 @@ import { AnimatedListContainer } from "./AnimatedListContainer"
 import { AnimatedSectionTitle } from "./AnimatedSectionTitle"
 import { Button } from "./Button"
 import { ResizablePanel } from "./ResizablePanel"
+import { useTranslation, TranslationContextType } from "../hooks/useTranslation"
 
 const services = [
   {
-    title: "Розробка ПЗ",
+    title: "Software Development",
     benefits: [{
-      title: "Швидко",
+      title: "Fast",
       icon: <FlashIcon />
     },
     {
-      title: "Якісно",
+      title: "Qualitatively",
       icon: <MedalIcon />
     },
     {
-      title: "Перспективно",
+      title: "Promising",
       icon: <RocketIcon />
     }],
     icon: <CodeImage />,
-    description: "Наше програмне забезпечення спрямоване на вирішення ваших бізнес-проблем і задоволення конкретних бізнес-потреб. Наша досвідчена команда може розробити програмне забезпечення для широкого кола галузей промисловості та застосувань, зокрема сільського господарства, фінансів, охорони здоров’я та логістики тощо. Наша мета — надати високоякісне програмне забезпечення, яке вирішить ваші бізнес-завдання та проблеми, а також оптимізує робочі процеси, щоб допомогти вашому бізнесу розвиватися."
+    description: "service-description-1"
   },
   {
-    title: "Створення ERP системи",
+    title: "Development of a Unique ERP System",
     benefits: [{
-      title: "Важливий кожен",
+      title: "Everyone Matters",
       icon: <HeartsIcon />
     },
     {
-      title: "Лідерство в галузі",
+      title: "Leadership is Here to Serve",
       icon: <CupIcon />
     },
     {
-      title: "Гнучкість",
+      title: "Resilient",
       icon: <DumbbellsIcon />
     }],
     icon: <ClipboardImage />,
-    description: "Розробка індивідуальних систем ERP (Enterprise Resource Planning) - системи, які оптимізують ваші бізнес-операції, покращують зв’язок між відділами та автоматизують процеси. Наші ERP-рішення адаптовані до унікальних потреб вашого бізнесу та можуть бути інтегровані з іншими програмними рішеннями для створення комплексної системи управління бізнесом."
+    description: "service-description-2"
   },
   {
-    title: "Створення інтернет-магазину",
+    title: "Online-Store Development",
     benefits: [{
       title: "Комунікація",
       icon: <DialogIcon />
     },
     {
-      title: "Ефективність",
+      title: "Efficiency",
       icon: <FlameIcon />
     },
     {
-      title: "Якість",
+      title: "Quality",
       icon: <MedalIcon />
     }],
     icon: <CartImage />,
-    description: "Ми пропонуємо послуги з розробки інтернет-магазину для клієнтів, які хочуть створити онлайн-версію свого бізнесу. Наша команда може розробити та налаштувати веб-сайт для електронної комерції, який буде простим у використанні та забезпечить безперебійну взаємодію з користувачем. Наша мета — допомогти вам збільшити онлайн-продажі, розширити клієнтську базу та покращити загальну ефективність бізнесу. Глибоке розуміння та великий досвід дозволяє нам створювати найбільш конверсійні інтернет-магазини для вас."
+    description: "service-description-4"
   },
   {
-    title: "Розробка ботів",
+    title: "Bot Development",
     benefits: [{
-      title: "Автоматизація",
+      title: "Automation",
       icon: <CogwheelIcon />
     },
     {
-      title: "Інновації",
+      title: "Innovation",
       icon: <StarsIcon />
     },
     {
-      title: "Якість",
+      title: "Quality",
       icon: <MedalIcon />
     }],
     icon: <GhostImage />,
-    description: "Ми спеціалізуємося на розробці індивідуальних ботів, які можуть автоматизувати завдання та підвищити ефективність. Ми можемо створювати ботів для широкого спектру програм, включаючи обслуговування клієнтів, соціальні мережі та продажі тощо. Наша мета — надати вам передову технологію, яка покращує продуктивність і покращує взаємодію з клієнтами."
+    description: "service-description-4"
   },
   {
-    title: "Перенесення сайтів",
+    title: "Website Transferring",
     benefits: [{
-      title: "Вміння",
+      title: "Skills",
       icon: <StarsIcon />
     },
     {
-      title: "Результативність",
+      title: "Result",
       icon: <FlameIcon />
     },
     {
-      title: "В ногу з часом",
+      title: "Experience",
       icon: <RocketIcon />
     }],
     icon: <CopyImage />,
-    description: "Ми пропонуємо послуги перенесення веб-сайту для клієнтів, які хочуть перенести свій веб-сайт з однієї платформи на іншу. Наша команда розробників гарантує, що перехід буде плавним і безперебійним, а веб-сайт залишатиметься повністю функціональним протягом усього процесу. Наша мета полягає в тому, щоб звести до мінімуму будь-які збої в онлайн бізнесі наших клієнтів і гарантувати що їхній веб-сайт продовжить відповідати їхнім потребам."
+    description: "service-description-5"
   },
   {
-    title: "Підтримка та оновлення",
+    title: "Support and Updates",
     benefits: [{
-      title: "Постійні покращення",
+      title: "Continuous Improvements",
       icon: <CogwheelIcon />
     },
     {
-      title: "Контроль",
+      title: "Expertise",
       icon: <ChecklistIcon />
     },
     {
-      title: "Спілкування",
+      title: "Communication",
       icon: <DialogIcon />
     }],
     icon: <CogwheelImage />,
-    description: "Ми спеціалізуємося на розробці індивідуальних ботів, які можуть автоматизувати завдання та підвищити ефективність. Ми можемо створювати ботів для широкого спектру програм, включаючи обслуговування клієнтів, соціальні мережі та продажі тощо. Наша мета — надати вам передову технологію, яка покращує продуктивність і покращує взаємодію з клієнтами."
+    description: "service-description-6"
   },
 
 ]
@@ -137,10 +138,10 @@ const services = [
 export const Services = () => {
   const [currentService, setCurrentService] = useState(0)
   let trend = useTrend(currentService)
-
+  const { translate } = useTranslation() as TranslationContextType
   return (
     <section className="services" id="services">
-      <AnimatedSectionTitle>Послуги</AnimatedSectionTitle>
+      <AnimatedSectionTitle>{translate("Services")}</AnimatedSectionTitle>
       <div className="service-viewer">
         <ul className="service-buttons">
           {services.map((value, index) =>
@@ -149,7 +150,7 @@ export const Services = () => {
                 className={`service-button ${index == currentService ? "active" : ""}`}
                 onClick={() => setCurrentService(index)}
               >
-                {value.title}
+                {translate(value.title)}
               </button>
             </AnimatedListContainer>
           )}
@@ -169,15 +170,15 @@ export const Services = () => {
                     {services[currentService].benefits.map((value, index) =>
                       <div key={index} className="service-benefit">
                         {value.icon}
-                        {value.title}
+                        <h3>{translate(value.title)}</h3>
                       </div>
                     )}
                   </div>
-                  <p className="service-description">{services[currentService].description}</p>
+                  <p className="service-description">{translate(services[currentService].description)}</p>
                 </div>
                 <div className="service-right">
                   {services[currentService].icon}
-                  <a href="#contacts"><Button>Хочу!</Button></a>
+                  <a href="#contacts"><Button>{translate("I want it!")}</Button></a>
                 </div>
               </div>
             </AnimatedCarousel>

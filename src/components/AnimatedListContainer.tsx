@@ -4,7 +4,7 @@ import React, { useId } from 'react'
 const variants = {
   initial: {
     opacity: 0,
-    y: 60
+    y: 'var(--bounce-amount)'
   },
   animate: (index: number) => ({
     opacity: 1,

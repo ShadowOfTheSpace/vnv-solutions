@@ -3,6 +3,7 @@ import { AnimatedImageCarousel } from './AnimatedImageCarousel'
 import { AnimatedSwiper } from './AnimatedSwiper'
 import { AnimatedSectionTitle } from './AnimatedSectionTitle'
 import { motion } from 'framer-motion'
+import { useTranslation, TranslationContextType } from '../hooks/useTranslation'
 
 const projects = [
   {
@@ -104,10 +105,10 @@ const projects = [
 export const Portfolio = () => {
   const [currentProject, setCurrentProject] = useState(0)
   const [currentContent, setCurrentContent] = useState(0)
-
+  const { translate } = useTranslation() as TranslationContextType
   return (
     <section className='portfolio' id='portfolio'>
-      <AnimatedSectionTitle>Наші проекти</AnimatedSectionTitle>
+      <AnimatedSectionTitle>{translate("Portfolio")}</AnimatedSectionTitle>
       <div className="projects-viewer" >
         <motion.div
           className="project-viewer"
@@ -127,9 +128,19 @@ export const Portfolio = () => {
             />
           </div>
         </motion.div>
-        <motion.div className="project-selector">
+        <motion.div className="project-selector vertical">
           <AnimatedImageCarousel
             type={'vertical'}
+            itemClass={'project-selector-item'}
+            containerClass={'project-selector-container'}
+            imageSrcList={projects.map(project => project.preview)}
+            onImageClick={() => setCurrentContent(0)}
+            setSelectedImage={setCurrentProject}
+          />
+        </motion.div>
+        <motion.div className="project-selector horizontal">
+          <AnimatedImageCarousel
+            type={'horizontal'}
             itemClass={'project-selector-item'}
             containerClass={'project-selector-container'}
             imageSrcList={projects.map(project => project.preview)}

@@ -6,6 +6,7 @@ import { ReactComponent as TelegramIcon } from '../assets/images/svg/telegram-ic
 import { ReactComponent as TikTok } from '../assets/images/svg/tiktok-icon.svg'
 import { AnimatedSectionTitle } from './AnimatedSectionTitle'
 import { SocialButton } from './SocialButton'
+import { useTranslation, TranslationContextType } from '../hooks/useTranslation'
 
 
 const socialNetworks = [
@@ -32,9 +33,11 @@ const socialNetworks = [
 ]
 
 export const SocialNetworks = () => {
+  const { translate } = useTranslation() as TranslationContextType
+
   return (
     <section className='social-networks'>
-      <AnimatedSectionTitle>Слідкуйте за нами</AnimatedSectionTitle> 
+      <AnimatedSectionTitle>{translate("Follow us")}</AnimatedSectionTitle>
       <ul className='social-networks-list'>
         {
           socialNetworks.map((socialNetwork, index) =>

@@ -1,8 +1,6 @@
 import { LanguageSwitcher } from './LanguageSwitcher'
 import { Navigation } from './Navigation'
 
-
-
 export const Header = () => {
 
   return (

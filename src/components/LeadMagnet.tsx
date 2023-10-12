@@ -8,6 +8,7 @@ import { ErrorMessage } from './ErrorMessage'
 import { HighlightedText } from './HighlightedText'
 import { useEffect, useState } from 'react'
 import { ResizablePanel } from './ResizablePanel'
+import { TranslationContextType, useTranslation } from '../hooks/useTranslation'
 
 const emailSchema = zod.object({
   email: zod.string().email("NonEmail")
@@ -16,6 +17,8 @@ const emailSchema = zod.object({
 type Email = zod.infer<typeof emailSchema>
 
 export const LeadMagnet = () => {
+  const { translate } = useTranslation() as TranslationContextType
+
   const [leadMagnetIsVisible, setLeadMagnetVisibility] = useState(false)
   const [isSuccess, setSuccess] = useState(false)
   useEffect(() => {
@@ -23,7 +26,7 @@ export const LeadMagnet = () => {
       setLeadMagnetVisibility(true)
     }, Math.random() * 8000 + 2000);
   }, [])
-  
+
   const {
     register,
     handleSubmit,
@@ -49,8 +52,9 @@ export const LeadMagnet = () => {
             <div className="lead-magnet-content">
               <div className="lead-magnet-header">
                 {!isSuccess ?
-                  <h4>Бажаєте отримати <HighlightedText>безкоштовну консультацію</HighlightedText>?</h4> :
-                  <h4>Успішно</h4>}
+
+                  <h4>{translate("Would you like to receive ")}<HighlightedText>{translate("a free consultation")}</HighlightedText> ?</h4> :
+                  <h4>{translate("Success")}</h4>}
                 <div className="exit-button">
                   <ExitIcon onClick={() => setLeadMagnetVisibility(false)} />
                 </div>
@@ -59,16 +63,16 @@ export const LeadMagnet = () => {
                 <form className='lead-magnet-form' onSubmit={handleSubmit(submitEmail)}>
                   <input
                     type='text'
-                    placeholder="Введіть ваш email..."
+                    placeholder={translate("Enter your email...")}
                     autoComplete='off'
                     {...register("email")}
                   />
                   <ErrorMessage>{errors.email ? errors.email.message : ""}</ErrorMessage>
-                  <Button arrow type='submit'>Отримати</Button>
+                  <Button arrow type='submit'>{translate("Receive")}</Button>
                 </form>
               </> :
                 <div className='success-content'>
-                  <h4>Безкоштовна консультація закріплена за Вашою поштою, зв'яжіться з нами якнайшвидше!</h4>
+                  <h4>{translate("A free consultation is attached to your email, contact us as soon as possible!")}</h4>
                 </div>}
             </div>
           </ResizablePanel>
