@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/vnv-solutions/static/css/main.07f81e9f.css",
-    "main.js": "/vnv-solutions/static/js/main.070a43a2.js",
+    "main.css": "/vnv-solutions/static/css/main.7e077c9b.css",
+    "main.js": "/vnv-solutions/static/js/main.2eca810a.js",
     "static/media/video.mp4": "/vnv-solutions/static/media/video.7e9195f1402ae2d7c3cd.mp4",
     "static/media/portfolio-iren-banquet-hall-1.jpg": "/vnv-solutions/static/media/portfolio-iren-banquet-hall-1.d185509cf604fe2035af.jpg",
     "static/media/portfolio-iren-banquet-hall-3.jpg": "/vnv-solutions/static/media/portfolio-iren-banquet-hall-3.021f77e47fbe3b5e8feb.jpg",
@@ -45,11 +45,11 @@
     "static/media/right-arrow.svg": "/vnv-solutions/static/media/right-arrow.07cd72ea4d45121929403b301cfa1ecc.svg",
     "static/media/left-arrow.svg": "/vnv-solutions/static/media/left-arrow.018b8d8a960d242d62644250e51b727d.svg",
     "static/media/upper-arrow.svg": "/vnv-solutions/static/media/upper-arrow.087139c709d8aa49de2f314f49356154.svg",
-    "main.07f81e9f.css.map": "/vnv-solutions/static/css/main.07f81e9f.css.map",
-    "main.070a43a2.js.map": "/vnv-solutions/static/js/main.070a43a2.js.map"
+    "main.7e077c9b.css.map": "/vnv-solutions/static/css/main.7e077c9b.css.map",
+    "main.2eca810a.js.map": "/vnv-solutions/static/js/main.2eca810a.js.map"
   },
   "entrypoints": [
-    "static/css/main.07f81e9f.css",
-    "static/js/main.070a43a2.js"
+    "static/css/main.7e077c9b.css",
+    "static/js/main.2eca810a.js"
   ]
 }
