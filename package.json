@@ -1,4 +1,5 @@
 {
+  "homepage": "https://ShadowOfTheSpace.github.io/vnv-solutions",
   "name": "vnv-solutions",
   "version": "0.1.0",
   "private": true,
@@ -23,6 +24,8 @@
     "zod": "^3.22.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -48,6 +51,7 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "@types/react-input-mask": "^3.0.3"
+    "@types/react-input-mask": "^3.0.3",
+    "gh-pages": "^6.0.0"
   }
 }
