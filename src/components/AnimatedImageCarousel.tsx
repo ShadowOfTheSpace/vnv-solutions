@@ -49,7 +49,7 @@ export const AnimatedImageCarousel = ({
           selectorRef.current.scrollWidth - selectorRef.current.clientWidth
       )
     }
-  }, [selectorRef.current])
+  }, [selectorRef.current, bounds])
 
   const onSelectionScroll = () => {
     const element = selectorRef.current
@@ -61,8 +61,8 @@ export const AnimatedImageCarousel = ({
       )
       setLowerScrollIsVisible(
         type === 'vertical' ?
-          Math.round(element.scrollTop) < Math.round(maxScrollHeight) :
-          Math.round(element.scrollLeft) < Math.round(maxScrollHeight)
+          Math.abs(element.scrollTop - maxScrollHeight) >= 1 :
+          Math.abs(element.scrollLeft - maxScrollHeight) >= 1
       )
     } else {
       setLowerScrollIsVisible(true)
